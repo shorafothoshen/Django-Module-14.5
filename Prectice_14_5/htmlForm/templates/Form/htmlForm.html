@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block contain %}
+<h1 class="d-flex justify-content-center align-items-center pt-5 ">HTML Form Page</h1>
+
+<form method='post' action="{% url "formDetails" %}" style="width: 50%; height: 500px; margin: auto;" class='pt-5'>
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" name="username">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="useremail">
+    </div>
+    <select class="form-select " aria-label="Default select example" name="select">
+      <option selected>Movie Reting</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock contain %}
